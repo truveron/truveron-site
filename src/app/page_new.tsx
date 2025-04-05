@@ -50,7 +50,9 @@ export default function Home() {
         {/* Navbar Menu */}
         <nav aria-label="Main Navigation">
           <ul
-            className={`md:flex md:space-x-6 text-black font-medium transition-all duration-300 transform ${menuOpen ? "translate-y-0 opacity-100" : "opacity-0 md:opacity-100"} ${isMobile ? 'absolute' : 'relative'} w-full md:w-auto h-screen md:h-auto flex flex-col items-center justify-center md:flex-row`}
+            className={`md:flex md:space-x-6 text-black font-medium transition-all duration-300 transform ${
+              menuOpen ? "translate-y-0 opacity-100" : "opacity-0 md:opacity-100"
+            } ${isMobile ? 'absolute' : 'relative'} w-full md:w-auto h-screen md:h-auto flex flex-col items-center justify-center md:flex-row`}
           >
             {["home", "features", "about", "contact"].map((section) => (
               <li key={section} className="mb-6 md:mb-0">
