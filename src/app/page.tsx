@@ -1,26 +1,24 @@
 import Image from "next/image";
-//import logo from "../../public/logo.png";  // Adjust the logo path accordingly
 
 // pages/index.tsx
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white font-sans">
       {/* Navbar */}
-      <header className="flex justify-between items-center py-4 px-6 bg-blue-900">
+      <header className="flex justify-between items-center py-4 px-6 bg-white">
         <div className="flex items-center">
           {/* Logo */}
           <Image
             src="/logo.png" // Use the correct path here
             alt="TRUVERON Logo"
-            width={350}
-            height={350}
+            width={350} // Adjusted logo size
+            height={213} // Adjusted logo size
             className="mr-4"
           />
-          
         </div>
         {/* Navigation Menu */}
         <nav>
-          <ul className="flex space-x-6 text-white">
+          <ul className="flex space-x-6 text-black">
             <li>
               <a href="#home" className="hover:text-blue-400">Home</a>
             </li>
@@ -39,13 +37,11 @@ export default function Home() {
 
       {/* Hero Section */}
       <section id="home" className="flex flex-col items-center justify-center text-center py-20 px-6 sm:px-10 bg-gradient-to-b from-blue-800 to-black">
-        
-        <h2 className="text-5xl sm:text-6xl font-bold mb-6 text-transparent bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 bg-clip-text">
-          TRUVERON
-        </h2>
-        <p className="text-lg sm:text-xl max-w-2xl mb-10 text-gray-300">
-          Empowering Web3 with AI-powered decentralized reputation and verification. Trust less. Trust smart.
-        </p>
+       
+      <h2 className="text-2xl sm:text-5xl font-bold mb-5 text-white">
+  Empowering Web3 with AI-powered Decentralized Reputation and Verification Oracle.
+</h2>
+
         <a
           href="#features"
           className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg transition-all duration-300"
