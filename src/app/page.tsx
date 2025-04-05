@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "../../public/logo.png";  // Adjust the logo path accordingly
+//import logo from "../../public/logo.png";  // Adjust the logo path accordingly
 
 // pages/index.tsx
 export default function Home() {
