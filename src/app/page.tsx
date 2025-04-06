@@ -1,4 +1,4 @@
-"use client";  // This marks the component as a client component
+"use client"; // This marks the component as a client component
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
@@ -37,7 +37,7 @@ export default function Home() {
         {/* Mobile Menu Button */}
         <button
           className="md:hidden flex items-center text-black"
-          onClick={() => setMenuOpen((prev) => !prev)} // Toggle state on each click
+          onClick={() => setMenuOpen(!menuOpen)}
         >
           {/* Hamburger Icon */}
           <div className="w-8 h-8 flex flex-col justify-between items-center">
@@ -50,7 +50,9 @@ export default function Home() {
         {/* Navbar Menu */}
         <nav aria-label="Main Navigation">
           <ul
-            className={`md:flex md:space-x-6 text-black font-medium transition-all duration-300 transform ${menuOpen ? "translate-y-0 opacity-100" : "opacity-0 md:opacity-100"} ${isMobile ? 'absolute' : 'relative'} w-full md:w-auto h-screen md:h-auto flex flex-col items-center justify-center md:flex-row`}
+            className={`md:flex md:space-x-6 text-black font-medium transition-all duration-300 transform ${
+              menuOpen || !isMobile ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+            } md:block absolute md:relative bg-white md:bg-transparent top-0 left-0 w-full md:w-auto h-screen md:h-auto flex flex-col items-center justify-center md:flex-row`}
           >
             {["home", "features", "about", "contact"].map((section) => (
               <li key={section} className="mb-6 md:mb-0">
@@ -62,12 +64,11 @@ export default function Home() {
                 </a>
               </li>
             ))}
-            
             {/* Close Button for Mobile */}
             {menuOpen && isMobile && (
               <li className="absolute top-4 right-4">
                 <button
-                  onClick={() => setMenuOpen(false)} // Close menu on click
+                  onClick={() => setMenuOpen(false)}
                   className="text-black text-2xl"
                 >
                   &times;
@@ -109,9 +110,9 @@ export default function Home() {
       {/* Features Section */}
       <section id="features" className="py-20 px-6 sm:px-10 bg-blue-900">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Why TRUVERON?</h2>
+          <h2 className="text-4xl font-bold text-white mb-6">Why Truveron?</h2>
           <p className="text-gray-300 text-lg mb-12">
-            TRUVERON bridges the Web3 trust gap with AI, blockchain analytics, and decentralized identity.
+            Truveron bridges the Web3 trust gap with AI, blockchain analytics, and decentralized identity.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -143,9 +144,9 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="py-20 px-6 sm:px-10 bg-gray-900 text-center">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-white mb-6">About TRUVERON</h2>
+          <h2 className="text-4xl font-bold text-white mb-6">About Truveron</h2>
           <p className="text-gray-300 text-lg">
-            TRUVERON is your decentralized reputation oracle. We provide trust metrics powered by blockchain data and AI so you can make confident decisions in Web3.
+            Truveron is your decentralized reputation oracle. We provide trust metrics powered by blockchain data and AI so you can make confident decisions in Web3.
           </p>
         </div>
       </section>
