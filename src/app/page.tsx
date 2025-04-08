@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Link from "next/link"; // Add this at the top
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false); // State to manage the menu visibility
@@ -54,16 +55,38 @@ export default function Home() {
               menuOpen || !isMobile ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
             } md:block absolute md:relative bg-white md:bg-transparent top-0 left-0 w-full md:w-auto h-screen md:h-auto flex flex-col items-center justify-center md:flex-row`}
           >
-            {["home", "features", "about", "contact"].map((section) => (
-              <li key={section} className="mb-6 md:mb-0">
-                <a
-                  href={`#${section}`}
-                  className="block px-6 py-2 bg-white text-black rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300 capitalize"
-                >
-                  {section}
+            <ul
+              className={`md:flex md:space-x-6 text-black font-medium transition-all duration-300 transform ${
+                menuOpen || !isMobile ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+              } md:block absolute md:relative bg-white md:bg-transparent top-0 left-0 w-full md:w-auto h-screen md:h-auto flex flex-col items-center justify-center md:flex-row`}
+            >
+              <li className="mb-6 md:mb-0">
+                <a href="#home" className="block px-6 py-2 bg-white text-black rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300 capitalize">
+                  home
                 </a>
               </li>
-            ))}
+              <li className="mb-6 md:mb-0">
+                <a href="#features" className="block px-6 py-2 bg-white text-black rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300 capitalize">
+                  features
+                </a>
+              </li>
+              <li className="mb-6 md:mb-0">
+                <a href="/testnet" className="block px-6 py-2 bg-white text-black rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300 capitalize">
+                  Testnet
+                </a>
+              </li>
+              <li className="mb-6 md:mb-0">
+                <Link href="#about" className="block px-6 py-2 bg-white text-black rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300 capitalize">
+                  about
+                </Link>
+              </li>
+              <li className="mb-6 md:mb-0">
+                <a href="#contact" className="block px-6 py-2 bg-white text-black rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300 capitalize">
+                  contact
+                </a>
+              </li>
+            </ul>
+            
             {/* Close Button for Mobile */}
             {menuOpen && isMobile && (
               <li className="absolute top-4 right-4">
@@ -92,12 +115,18 @@ export default function Home() {
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center">
+        
           <a
             href="#features"
             className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg transition-all duration-300"
           >
-            Learn More
+            Download White Paper
           </a>
+        
+          {/*<button className="border border-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl transition-all">
+            Download Whitepaper
+          </button>
+          */}
           <button className="border border-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl transition-all">
             Join Waitlist
           </button>
